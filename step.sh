@@ -25,7 +25,7 @@ body+='  "startDate": "'$today'"
 res="$(curl -u $jira_user:$jira_token -X POST -H 'Content-Type: application/json' --data-raw "${body}" https://${jira_domain}/rest/api/2/version)"
 
 if [[ $res == *"errorMessages"* ]]; then
-  echo '$'\t'"${red}❗️ Failed${reset} "$res
+  echo $'\t'"${red}❗️ Failed${reset} "$res
 else
   echo $'\t'"${green}✅ Success!${reset}"
 fi

@@ -51,11 +51,9 @@ run_if: ""
 
 deps:
   brew:
-  - name: git
-  - name: wget
+  - name: curl
   apt_get:
-  - name: git
-  - name: wget
+  - name: curl
 
 
 toolkit:
@@ -124,10 +122,10 @@ inputs:
       is_required: true
   - version_released: "no"
     opts:
-      title: "If the version was published?"
-      summary: "If the version was published"
+      title: "If the version is Released?"
+      summary: "If the version is Released"
       description: |
-        If the version was published.
+        If the version is Released.
       is_required: true
       value_options:
       - "yes"
