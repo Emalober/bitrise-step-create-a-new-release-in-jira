@@ -12,7 +12,7 @@ title: |-
 summary: |
   Create a new release in JIRA.
 description: |
-  This steps create a Release in your JIRA project, with the start date, publication and description you need.
+  This Step creates a Release in your JIRA project, with the start date, publication and description you need.
 website: https://github.com/Emalober/bitrise-step-create-a-new-release-in-jira
 source_code_url: https://github.com/Emalober/bitrise-step-create-a-new-release-in-jira
 support_url: https://github.com/Emalober/bitrise-step-create-a-new-release-in-jira/issues
@@ -52,8 +52,10 @@ run_if: ""
 deps:
   brew:
   - name: curl
+  - name: jq
   apt_get:
   - name: curl
+  - name: jq
 
 
 toolkit:
@@ -91,6 +93,7 @@ inputs:
         
         e.g. "someone@example.pl"
       is_sensitive: true
+      is_required: true
   - jira_token:
     opts:
       title: "Jira user token"
@@ -100,6 +103,7 @@ inputs:
         
         24 character string
       is_sensitive: true
+      is_required: true
   - version_description:
     opts:
       title: "Version  description"
@@ -108,7 +112,6 @@ inputs:
         Version description.
       
         e.g. "An excellent version"
-      is_expand: true
       is_required: true
   - version_name:
     opts:
